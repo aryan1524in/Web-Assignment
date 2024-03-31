@@ -5,7 +5,6 @@ document.getElementById("quiz-form").addEventListener("submit", function(event) 
     let score = 0;
     let answers = [];
 
-    // Check answers and store user's responses
     formData.forEach((value, key) => {
         if (key.startsWith("q")) {
             const questionNumber = key.replace("q", "");
@@ -23,7 +22,7 @@ document.getElementById("quiz-form").addEventListener("submit", function(event) 
     quizResults.innerHTML = `<h2>Quiz Results</h2>`;
     quizResults.innerHTML += `<p>Your score: ${score} out of 10</p>`;
 
-    // Display correct answers and explanations
+    // Display correct answers
     answers.forEach((item) => {
         const questionNumber = item.question.replace("q", "");
         const correctAnswer = correctAnswers[questionNumber].answer;
